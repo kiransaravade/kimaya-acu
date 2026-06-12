@@ -22,7 +22,10 @@
             <div class="logo-section">
                 <img src="images/logo-nav.png" alt="Kimaya Acupuncture Logo" class="navbar-logo">
             </div>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#treatments">Treatments</a></li>
@@ -181,6 +184,11 @@
                         <p><a href="tel:+917722045222">+91 77220 45222</a><br>
                         <a href="tel:+917722044222">+91 77220 44222</a></p>
                     </div>
+
+                    <div class="info-item">
+                        <h4>💬 WhatsApp</h4>
+                        <p><a href="https://wa.me/917722045222" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+                    </div>
                     
                     <div class="info-item">
                         <h4>🕐 Hours</h4>
@@ -195,7 +203,7 @@
                 </div>
 
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.2778010683865!2d73.86047687549704!3d18.471071682612934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eb9bcac73213%3A0xdf2d670a8bf63861!2sKimaya%20Acupuncture!5e0!3m2!1sen!2sde!4v1781251677621!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.2778010683865!2d73.86047687549704!3d18.471071682612934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eb9bcac73213%3A0xdf2d670a8bf63861!2sKimaya%20Acupuncture!5e0!3m2!1sen!2sde!4v1781251677621!5m2!1sen!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -204,7 +212,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Kimaya Acupuncture. All rights reserved.</p>
+            <p>&copy; 2026 Kimaya Acupuncture. All rights reserved.</p>
             <p>Certified Professional Acupuncture Clinic | Pune, India</p>
             <div class="footer-links">
                 <a href="#home">Home</a> | 
@@ -215,7 +223,6 @@
         </div>
     </footer>
 
-    <!-- Schema Markup for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -231,7 +238,7 @@
             "postalCode": "411037",
             "addressCountry": "IN"
         },
-        "telephone": "+91-7722045222",
+        "telephone": ["+91-7722045222", "+91-7722044222"],
         "url": "https://kimaya-acupuncture.pages.dev",
         "priceRange": "$$",
         "aggregateRating": {
@@ -244,6 +251,24 @@
             "https://www.google.com/maps/place/Kimaya+Acupuncture"
         ]
     }
+    </script>
+
+    <!-- Hamburger Menu Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
     </script>
 </body>
 </html>
