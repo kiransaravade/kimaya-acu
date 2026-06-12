@@ -1,0 +1,10 @@
+# IDE workspace files
+.vs/
+
+# Copilot/local index databases
+CodeChunks.db
+CodeChunks.db-shm
+CodeChunks.db-wal
+SemanticSymbols.db
+SemanticSymbols.db-shm
+SemanticSymbols.db-wal
